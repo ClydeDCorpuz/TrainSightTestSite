@@ -5,7 +5,7 @@
     font-family: 'Cabin', Arial, sans-serif;
     font-weight: normal;
     font-size: var(--body);
-    color: #F9F9F9;
+    color: var(--white);
 }
 
 :root {
@@ -29,7 +29,7 @@
 
 html,body
 {
-   min-width: 360px;
+   min-width: 400px;
 }
 
 body {
@@ -69,7 +69,7 @@ p {
     font-style: italic;
 }
 
-button {
+.btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,14 +88,7 @@ button {
     -webkit-tap-highlight-color: transparent;
 }
 
-@media (hover: hover) {
-    button:hover {
-        transform: scale(1.05);
-        transition: transform 0.1s ease-out;
-    }
-}
-
-button:active {
+.btn:active {
     transform: scale(0.95);
     transition: transform 0.1s ease-out;
 }
@@ -106,6 +99,8 @@ button:active {
     background: var(--glass);
     border-color: var(--glass-edge);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); 
 }
 
 .card {
@@ -131,7 +126,7 @@ button:active {
     justify-content: center;
     background-color: var(--gray);
     background: linear-gradient(to bottom, var(--gray), #181818);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -185,7 +180,7 @@ button:active {
     font-weight: bold;
 }
 
-.theme-toggle {
+.theme-toggle-btn {
     display: flex;
     align-items: center;
 
@@ -400,17 +395,6 @@ button:active {
     gap: .25rem;
 }
 
-@media (hover: hover) {
-    .theme-toggle:hover {
-        box-shadow: 0px 0px 8px rgba(32, 128, 255, 0.25);
-        transition: box-shadow 0.2s ease-out;
-    }
-    .banner-btn-primary:hover {
-        box-shadow: 0px 0px 8px rgba(255, 0, 0, 0.25);
-        transition: box-shadow 0.2s ease-out;
-    }
-}
-
 @media (max-width: 60rem) {
     .framed {
         padding-left: 2rem;
@@ -468,12 +452,27 @@ button:active {
     }
 }
 
-@media (max-width: 25rem) {
-    .banner-buttons button {
+@media (max-width: 26rem) {
+    .banner-buttons .btn {
         padding: .6rem .6rem;
     }
 
     .metrics-container {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (hover: hover) {
+    .btn:hover {
+        transform: scale(1.05);
+        transition: transform 0.1s ease-out;
+    }
+    .theme-toggle-btn:hover {
+        box-shadow: 0px 0px 8px rgba(32, 128, 255, 0.25);
+        transition: box-shadow 0.2s ease-out;
+    }
+    .banner-btn-primary:hover {
+        box-shadow: 0px 0px 8px rgba(255, 0, 0, 0.25);
+        transition: box-shadow 0.2s ease-out;
     }
 }
