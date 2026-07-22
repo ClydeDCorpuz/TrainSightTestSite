@@ -19,11 +19,11 @@
 
     --black: #101010;
     --white: #F9F9F9;
-
+    --gray: #202020;
     --red: #F23839;
     --yellow: #F3CA40;
     --blue: #2840A4;
-    --glass: linear-gradient(to bottom right, rgba(255,255,255,.02), rgba(255,255,255,.08));
+    --glass: linear-gradient(to bottom right, rgba(255,255,255,.08), rgba(200,200,200,.02));
     --glass-edge: rgba(255,255,255,.14);
 }
 
@@ -83,6 +83,7 @@ button {
     font-weight: bold;
     text-decoration: none;
 
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.1s ease-out;
     -webkit-tap-highlight-color: transparent;
 }
@@ -126,8 +127,11 @@ button:active {
     height: 3.5rem;
 
     display: flex;
+    border-bottom: 1px solid var(--glass-edge);
     justify-content: center;
-    background-color: var(--black);
+    background-color: var(--gray);
+    background: linear-gradient(to bottom, var(--gray), #181818);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .header-container {
@@ -242,7 +246,6 @@ button:active {
 
 .banner-btn-primary {
     background: var(--red);
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .features-section {
@@ -253,7 +256,7 @@ button:active {
     padding-bottom: 6rem;
     gap: 1rem;
 
-    background-color: #202020;
+    background-color: var(--gray);
 }
 
 .features-container {
@@ -367,13 +370,11 @@ button:active {
 .team-btn {
     color: var(--black);
     background: var(--yellow);
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .donate-btn {
     color: var(--black);
     background: var(--white);
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .footer {
@@ -417,11 +418,7 @@ button:active {
     }
 }
 
-@media (max-aspect-ratio: 1/1) {
-    h1 {
-        font-size: var(--header);
-    }
-    
+@media (max-aspect-ratio: 1/1) {    
     .nav-menu {
         display: none;
     }
