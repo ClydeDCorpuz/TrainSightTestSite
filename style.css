@@ -221,7 +221,8 @@ p {
 .banner-container {
     display: flex;
     flex-direction: column;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
     gap: 1.5rem;
 }
 
