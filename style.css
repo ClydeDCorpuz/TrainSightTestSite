@@ -226,11 +226,11 @@ p {
 }
 
 .banner-container h1 {
-    max-width: 32rem;
+    max-width: 30rem;
 }
 
 .banner-container p {
-    max-width: 32rem;
+    max-width: 30rem;
 }
 
 .btn-group {
@@ -402,7 +402,7 @@ p {
     }
 }
 
-@media (max-aspect-ratio: 1/1) {    
+@media (max-width: 60rem) {    
     .nav-menu {
         display: none;
     }
