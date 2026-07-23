@@ -20,10 +20,10 @@
 
     --black: #101010;
     --white: #F9F9F9;
-    --gray: #202020;
+    --gray: #181818;
     --red: #F23839;
-    --yellow: #F3CA40;
     --blue: #2840A4;
+    --yellow: #F3CA40;
 
     --dark-bg: var(--gray);
     --dark-text: var(--white);
@@ -32,10 +32,10 @@
     
     --btn-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 
-    --glass: linear-gradient(160deg, rgba(200,200,200,0.18), rgba(127,127,127,.1) 70%);
-    --glass-dark: linear-gradient(160deg, var(--dark-bg), rgba(32,32,32,0.5) 70%);
+    --glass: linear-gradient(to bottom right, rgba(160,160,160,0.18), rgba(127,127,127,.1) 70%);
+    --glass-dark: linear-gradient(to bottom right, rgba(32,32,32,0.75), rgb(16, 16, 16,.75) 70%);
     --glass-edge: rgba(255,255,255,.1);
-    --glass-shadow: inset -1px -1px 4px 0 rgba(0, 0, 0, .1), inset 1px 1px 4px 0 rgba(255, 255, 255, 0.06);
+    --glass-shadow: inset -1px -1px 4px 0 rgba(0, 0, 0, .1), inset 1px 1px 4px 0 rgba(255, 255, 255, 0.05);
     --glass-blur: 8px;
 }
 
@@ -98,11 +98,6 @@ p {
     transition: transform 0.1s ease-out;
 }
 
-.btn:active {
-    transform: scale(0.95);
-    transition: transform 0.1s ease-out;
-}
-
 button:active {
     transform: scale(0.95);
     transition: transform 0.1s ease-out;
@@ -132,6 +127,8 @@ button:active {
 .framed {
     width: 100%;
     max-width: var(--content-width);
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .header {
@@ -168,10 +165,6 @@ button:active {
     display: flex;
     height: 100%;
     z-index: 1;
-}
-
-.logo-img {
-    filter: drop-shadow(0px 0px 1px 1px rgba(0, 0, 0, 0.1));
 }
 
 .nav-menu {
@@ -428,11 +421,7 @@ button:active {
     gap: .25rem;
 }
 
-@media (max-width: 60rem) {   
-    .framed {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    } 
+@media (max-width: 52rem) {
     .nav-menu {
         position: absolute;
         top: 3.5rem;
@@ -447,14 +436,14 @@ button:active {
         padding: 1rem 2rem;
         border-bottom: 1px solid var(--glass-edge);
         
-        background: var(--glass-dark);
+        background: var(--black);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
     }
 
     .nav-item {
         border-top: 1px solid var(--glass-edge);
-        padding: 1rem 0;
+        padding: 1rem 2rem;
 
         font-size: var(--h4);
     }

@@ -1,19 +1,10 @@
-const responsiveSwitchWidth = window.matchMedia('(max-width: 60rem)');
-responsiveSwitchWidth.addEventListener('change', responsiveSwitch);
+gsap.defaults({
+  ease: "power4.inOut",
+  duration: 0.5,
+});
 
 const navMenu = document.getElementById("navMenu");
-
 let navShown = true;
-
-
-function responsiveSwitch(event) {
-    if (event.matches) {
-        hideNav();
-    } else {
-        showNav();
-        gsap.set(navMenu,{y:0});
-    }
-}
 
 function showNav() {
     navMenu.classList.remove("hidden");
@@ -28,27 +19,30 @@ function hideNav() {
 function toggleNav() {
     if (!navShown) {
         showNav();
-        gsap.fromTo(navMenu,
-        {
+        gsap.fromTo(navMenu, {
             y: -324,
-        },
-        {
-            duration: 0.5, 
-            y: 0, 
-            ease: "power4.inOut"
+        }, {
+            y: 0
         });
     } else {
-        gsap.fromTo(navMenu,
-        {
+        gsap.fromTo(navMenu, {
             y: 0,
-        },
-        {
-            duration: 0.5, 
-            y: -324, 
-            ease: "power4.inOut",
+        }, {
+            y: -324,
             onComplete: hideNav
         });
     }
 }
 
+const responsiveSwitchWidth = window.matchMedia('(max-width: 60rem)');
+responsiveSwitchWidth.addEventListener('change', responsiveSwitch);
 responsiveSwitch(responsiveSwitchWidth);
+
+function responsiveSwitch(event) {
+    if (event.matches) {
+        hideNav();
+    } else {
+        showNav();
+        gsap.set(navMenu,{y:0});
+    }
+}
