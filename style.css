@@ -230,7 +230,7 @@ button:active {
 
 .banner-section::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: -3rem; 
   left: 0;
   width: 100%;
@@ -256,7 +256,7 @@ button:active {
 }
 
 .banner-container p {
-    max-width: 30rem;
+    max-width: 24rem;
 }
 
 .btn-group {
@@ -318,7 +318,7 @@ button:active {
     flex-direction: column;
     align-items: center;
     padding-top: 3rem;
-    padding-bottom: 6rem;
+    padding-bottom: 3rem;
     gap: 1rem;
 
     background-color: var(--black);
@@ -329,16 +329,14 @@ button:active {
 
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
 
     gap: 2rem;
 }
 
-.community-note {
-    display: flex;
-    flex-direction: column;
-    padding-top: 1rem;
-    gap: 1rem;
+.community-container > * {
+    text-align: center;
 }
 
 .mission-section {
@@ -502,12 +500,10 @@ button:active {
 
 @media (hover: hover) {
     .btn:hover {
-        transform: scale(1.05);
+        transform: translateY(-2px);
         transition: transform 0.1s ease-out;
     }
     .theme-toggle-btn:hover {
-        transform: scale(1.05);
-        transition: transform 0.1s ease-out;
         box-shadow: 0px 0px 8px #0a84ff;
         transition: box-shadow 0.1s ease-out;
     }

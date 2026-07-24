@@ -25,16 +25,14 @@ function toggleNav() {
             y: 0
         });
     } else {
-        gsap.fromTo(navMenu, {
-            y: 0,
-        }, {
+        gsap.to(navMenu, {
             y: -324,
             onComplete: hideNav
         });
     }
 }
 
-const responsiveSwitchWidth = window.matchMedia('(max-width: 60rem)');
+const responsiveSwitchWidth = window.matchMedia('(max-width: 52rem)');
 responsiveSwitchWidth.addEventListener('change', responsiveSwitch);
 responsiveSwitch(responsiveSwitchWidth);
 
